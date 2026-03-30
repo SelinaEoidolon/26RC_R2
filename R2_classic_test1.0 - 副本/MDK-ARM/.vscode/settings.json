@@ -1,0 +1,5 @@
+{
+    "clangd.arguments": [
+        "--compile-commands-dir=f:\\spareE\\My_projects\\R2_classic_test1.0\\MDK-ARM\\out\\R2_classic_test10\\R2_classic_test10"
+    ]
+}
