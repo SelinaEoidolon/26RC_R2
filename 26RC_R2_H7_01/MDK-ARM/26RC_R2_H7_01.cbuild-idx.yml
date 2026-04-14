@@ -1,0 +1,19 @@
+build-idx:
+  generated-by: csolution version 2.13.0+p3-g40b6564e
+  csolution: 26RC_R2_H7_01.csolution.yml
+  cbuild-run: out/26RC_R2_H7_01+26RC_R2_H7_01.cbuild-run.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: 26RC_R2_H7_01.cproject.yml
+  cbuilds:
+    - cbuild: out/26RC_R2_H7_01/26RC_R2_H7_01/26RC_R2_H7_01+26RC_R2_H7_01.cbuild.yml
+      project: 26RC_R2_H7_01
+      configuration: +26RC_R2_H7_01
+      messages:
+        info:
+          - 26RC_R2_H7_01.cbuild-pack.yml - file is already up-to-date
+          - 26RC_R2_H7_01+26RC_R2_H7_01.cbuild-run.yml - file is already up-to-date
+          - 26RC_R2_H7_01+26RC_R2_H7_01.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.16.2
+        - pack: ARM::CMSIS-NN@4.1.0

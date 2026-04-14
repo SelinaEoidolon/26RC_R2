@@ -1,0 +1,16 @@
+# Target labels
+ 26RC_R2_H7_01+26RC_R2_H7_01
+# Source files and their labels
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/CMakeFiles/26RC_R2_H7_01+26RC_R2_H7_01
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/CMakeFiles/26RC_R2_H7_01+26RC_R2_H7_01.rule
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/CMakeFiles/26RC_R2_H7_01+26RC_R2_H7_01-complete.rule
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/26RC_R2_H7_01+26RC_R2_H7_01/src/26RC_R2_H7_01+26RC_R2_H7_01-stamp/26RC_R2_H7_01+26RC_R2_H7_01-build.rule
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/26RC_R2_H7_01+26RC_R2_H7_01/src/26RC_R2_H7_01+26RC_R2_H7_01-stamp/26RC_R2_H7_01+26RC_R2_H7_01-configure.rule
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/26RC_R2_H7_01+26RC_R2_H7_01/src/26RC_R2_H7_01+26RC_R2_H7_01-stamp/26RC_R2_H7_01+26RC_R2_H7_01-database.rule
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/26RC_R2_H7_01+26RC_R2_H7_01/src/26RC_R2_H7_01+26RC_R2_H7_01-stamp/26RC_R2_H7_01+26RC_R2_H7_01-download.rule
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/26RC_R2_H7_01+26RC_R2_H7_01/src/26RC_R2_H7_01+26RC_R2_H7_01-stamp/26RC_R2_H7_01+26RC_R2_H7_01-executes.rule
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/26RC_R2_H7_01+26RC_R2_H7_01/src/26RC_R2_H7_01+26RC_R2_H7_01-stamp/26RC_R2_H7_01+26RC_R2_H7_01-install.rule
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/26RC_R2_H7_01+26RC_R2_H7_01/src/26RC_R2_H7_01+26RC_R2_H7_01-stamp/26RC_R2_H7_01+26RC_R2_H7_01-mkdir.rule
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/26RC_R2_H7_01+26RC_R2_H7_01/src/26RC_R2_H7_01+26RC_R2_H7_01-stamp/26RC_R2_H7_01+26RC_R2_H7_01-patch.rule
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/26RC_R2_H7_01+26RC_R2_H7_01/src/26RC_R2_H7_01+26RC_R2_H7_01-stamp/26RC_R2_H7_01+26RC_R2_H7_01-test.rule
+F:/spareE/Vinci_Robocon_2026/26_RC_Projects/26RC_R2_H7_01/MDK-ARM/tmp/26RC_R2_H7_01+26RC_R2_H7_01/src/26RC_R2_H7_01+26RC_R2_H7_01-stamp/26RC_R2_H7_01+26RC_R2_H7_01-update.rule

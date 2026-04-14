@@ -1,7 +1,0 @@
-Error: 0 error(s), 1 warning(s):
-Warnings:
-	Target name changed from 'R2_classic_test1.0' to 'R2_classic_test10'
-1 out of 1 target(s) converted
-Created solution: F:/spareE/My_projects/R2_classic_test1.0/MDK-ARM/R2_classic_test1.0.csolution.yml
-With projects:
-- F:/spareE/My_projects/R2_classic_test1.0/MDK-ARM/R2_classic_test1.0.cproject.yml
