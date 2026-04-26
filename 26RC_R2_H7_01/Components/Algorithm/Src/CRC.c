@@ -159,12 +159,12 @@ void BT_Data_MAC_Process(float *V_x, float *V_y, float *V_w, int8_t *cmd)
     *V_w = (int8_t)frame[2] / 128.0f * 256.0f;
 
     /* �Ȳ����� */
-    legx = (float)(int8_t)frame[3];
-    legy = (float)(int8_t)frame[4];
+    legx = (float)(int8_t)frame[3] / 128.0f * 180.0f;
+    legy = (float)(int8_t)frame[4] / 128.0f * 180.0f;
     leghtheta = (float)(int8_t)frame[5] / 128.0f * 55.0f;
 
-    if (fabsf(legx) >= 125.0f)      legx = (legx > 0.0f) ? 125.0f : -125.0f;
-    if (fabsf(legy) >= 125.0f)      legy = (legy > 0.0f) ? 125.0f : -125.0f;
+    if (fabsf(legx) >= 180.0f)      legx = (legx > 0.0f) ? 180.0f : -180.0f;
+    if (fabsf(legy) >= 180.0f)      legy = (legy > 0.0f) ? 180.0f : -180.0f;
     if (fabsf(leghtheta) >= 55.0f)  leghtheta = (leghtheta > 0.0f) ? 55.0f : -55.0f;
 
     leg_flag = (int8_t)frame[6];

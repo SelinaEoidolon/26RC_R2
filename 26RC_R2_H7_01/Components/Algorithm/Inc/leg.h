@@ -3,14 +3,25 @@
 
 #include "struct_typedef.h"
 
+#define LEG_REMOTE_X_MIN_MM  -180.0f
+#define LEG_REMOTE_X_MAX_MM   180.0f        
+#define LEG_REMOTE_Y_MIN_MM  -180.0f
+#define LEG_REMOTE_Y_MAX_MM   180.0f
+#define LEG_REMOTE_H_MIN_MM  -55.0f
+#define LEG_REMOTE_H_MAX_MM   55.0f
 
+#define LEGINIT_OFFSET        0.30543261f
 typedef struct{
 	float theta1;
 	float theta2;
 }leg;
-
+// extern float legInit_offest;
 extern leg lf_leg;
 extern leg rf_leg;
+extern float  lf_last_theta1;
+extern float  lf_last_theta2;
+extern float  rf_last_theta1;
+extern float  rf_last_theta2;
 extern float lb_leg;
 extern float rb_leg;
 

@@ -16,47 +16,81 @@ extern float rb_leg ;
 extern int8_t pre_step_flag;
 extern float pre_step_wheel_speed ;
 
+
+
 void CAN_Task(void const * argument){
 	Delay_ms(5000);
 	float Tnum = 360.0f / 8192.0f / 3591.0f *187.0f / 5.0f;
 	for(;;)
     {
-        if(pre_step_flag == 0)
-        {
-		    FDCAN2_CMD_1(PID_velocity_realize_2(-total_speed.fl,1),
-				         PID_velocity_realize_2(total_speed.fr,2),
-				         PID_velocity_realize_2(total_speed.bl,3),
-				         PID_velocity_realize_2(-total_speed.br,4)
-		    );
+
+        if(USART_Task_flag == 1U)
+		{
+			if(pre_step_flag == 0)
+        	{
+		    	FDCAN2_CMD_1(PID_velocity_realize_2(total_speed.fl,1),
+					         PID_velocity_realize_2(-total_speed.fr,2),
+					         PID_velocity_realize_2(total_speed.bl,3),
+					         PID_velocity_realize_2(-total_speed.br,4)
+		    	);
+
+			}
+			if(pre_step_flag == 1)
+			{
+				FDCAN2_CMD_1(PID_velocity_realize_2(pre_step_wheel_speed,1),
+					         PID_velocity_realize_2(-pre_step_wheel_speed,2),
+				 	         PID_velocity_realize_2(total_speed.bl,3),
+				 	         PID_velocity_realize_2(-total_speed.br,4)
+		    	);
+			}
+
+			FDCAN3_CMD_1(0,
+		    	         pid_call_3(ctrl_j2 / Tnum, 2), 
+		    	         pid_call_3( ctrl_j3 / Tnum ,3), 
+		    	         0
+			);
+			// FDCAN3_CMD_1(0,
+		    // 	         30.0f / Tnum, 
+		    // 	         30.0f / Tnum , 
+		    // 	         0
+			// );
+
 
 		}
-		if(pre_step_flag == 1)
+		if(USB_Task_flag == 1U)
 		{
-			FDCAN2_CMD_1(PID_velocity_realize_2(-pre_step_wheel_speed,1),
-				         PID_velocity_realize_2(pre_step_wheel_speed,2),
-				         PID_velocity_realize_2(total_speed.bl,3),
-				         PID_velocity_realize_2(-total_speed.br,4)
-		    );
-		}
-		// FDCAN3_CMD_1(0, 
-		//              pid_call_3(0.0f, 2), 
-		//              pid_call_3(0.0f ,3), 
-		//              0
-		// );
-		FDCAN3_CMD_1(0,
-		             pid_call_3(-ctrl_j2 / Tnum, 2), 
+            if(pre_step_flag == 0)
+            {
+		        FDCAN2_CMD_1(PID_velocity_realize_2(total_speed_USB.fl,1),
+				             PID_velocity_realize_2(-total_speed_USB.fr,2),
+				             PID_velocity_realize_2(total_speed_USB.bl,3),
+				             PID_velocity_realize_2(-total_speed_USB.br,4)
+		        );
+
+		    }
+		    if(pre_step_flag == 1)
+		    {
+			    FDCAN2_CMD_1(PID_velocity_realize_2(pre_step_wheel_speed,1),
+				             PID_velocity_realize_2(-pre_step_wheel_speed,2),
+				             PID_velocity_realize_2(total_speed_USB.bl,3),
+				             PID_velocity_realize_2(-total_speed_USB.br,4)
+		        );
+		    }
+		    FDCAN3_CMD_1(0,
+		             pid_call_3(ctrl_j2 / Tnum, 2), 
 		             pid_call_3( ctrl_j3 / Tnum ,3), 
 		             0
-		);
+		    );
 
-        pos_ctrl(&hfdcan1,motor[Motor1].id,lf_leg.theta1,0.5);
-		pos_ctrl(&hfdcan1,motor[Motor2].id,lf_leg.theta2,0.5);
-		pos_ctrl(&hfdcan1,motor[Motor3].id,rf_leg.theta1,0.5);
-		pos_ctrl(&hfdcan1,motor[Motor4].id,rf_leg.theta2,0.5);
-		pos_ctrl(&hfdcan1,motor[Motor5].id,lb_leg,2);
-		pos_ctrl(&hfdcan1,motor[Motor6].id,rb_leg,2);
-		Delay_ms(1);
-        
+
+		    Delay_ms(1);
+		}
+            pos_ctrl(&hfdcan1,motor[Motor1].id,lf_leg.theta1,0.5);
+		    pos_ctrl(&hfdcan1,motor[Motor2].id,lf_leg.theta2,0.5);
+		    pos_ctrl(&hfdcan1,motor[Motor3].id,rf_leg.theta1,0.5);
+		    pos_ctrl(&hfdcan1,motor[Motor4].id,rf_leg.theta2,0.5);
+		    pos_ctrl(&hfdcan1,motor[Motor5].id,lb_leg,2);
+		    pos_ctrl(&hfdcan1,motor[Motor6].id,rb_leg,2);
         osDelay(1);
     }
 

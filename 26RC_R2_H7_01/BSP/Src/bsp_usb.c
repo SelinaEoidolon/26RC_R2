@@ -8,11 +8,9 @@ extern uint8_t USB_Task_flag;
 extern uint8_t USART_Task_flag ;
 
 void ArmIK_ComponentStep(float x, float y, float z);
-static float USB_BytesToFloatLE(const uint8_t *buf);
 
-static float RemoteArm_Clamp(float x, float min_val, float max_val);
 
-/* Э����ջ���? */
+/* Э����ջ���? */
 uint8_t usb_Buf[USB_FRAME_BUF_SIZE];
 
 /* ����ʧ��ͳ�ƣ�TX ring �ռ䲻������ */
@@ -61,22 +59,6 @@ static uint8_t USB_ParserPushByte(uint8_t byte)
     return 1U;
 }
 
-/* С���ֽ���ת float */
-static float USB_BytesToFloatLE(const uint8_t *buf)
-{
-    union
-    {
-        uint8_t b[4];
-        float   f;
-    } u;
-
-    u.b[0] = buf[0];
-    u.b[1] = buf[1];
-    u.b[2] = buf[2];
-    u.b[3] = buf[3];
-
-    return u.f;
-}
 
 
 /*========================= ���Ͳ��� =========================*/
@@ -86,7 +68,7 @@ void SendByte(uint8_t data)
     (void)data;
     /* ���ﱣ����ʵ�֡�
        �㵱ǰ USB CDC �����Ѿ��� Send()/Send_Cmd_Data() �ˣ�
-       ������Ҫ���ֽڵ������������? */
+       ������Ҫ���ֽڵ������������? */
 }
 
 uint8_t Send(const uint8_t *data, uint16_t len)
@@ -187,7 +169,7 @@ uint8_t Send_Cmd_Data(uint8_t cmd, const uint8_t *datas, uint8_t len)
     /* �� [֡ͷ, ����, ����, ����] �� CRC */
     crc16 = CRC16_Check(buf, cnt);
 
-    /* �����㵱ǰЭ���ֽ����ȸ��ֽڣ�����ֽ�? */
+    /* �����㵱ǰЭ���ֽ����ȸ��ֽڣ�����ֽ�? */
     buf[cnt++] = (uint8_t)(crc16 >> 8);
     buf[cnt++] = (uint8_t)(crc16 & 0xFFU);
     buf[cnt++] = USB_FRAME_TAIL;
@@ -198,50 +180,11 @@ uint8_t Send_Cmd_Data(uint8_t cmd, const uint8_t *datas, uint8_t len)
 
 /*========================= Э�����ݽ��� =========================*/
 
-void Data_Analysis(uint8_t cmd, const uint8_t* datas, uint8_t len)
-{
-    float x, y, z;
-
-    switch (cmd)
-    {
-    case USB_CMD_ARM_SET_XYZ:
-        /* ��������ʽ��x(float) + y(float) + z(float) = 12�ֽ� */
-        if ((datas == 0) || (len != 12U))
-        {
-            uint8_t tx_data[2];
-            tx_data[0] = ARM_IK_RESULT_PARAM_ERR;
-            tx_data[1] = 0U;
-            (void)Send_Cmd_Data(USB_CMD_ARM_IK_RESULT, tx_data, 2U);
-            break;
-        }
-
-        x = USB_BytesToFloatLE(&datas[0]);
-        y = USB_BytesToFloatLE(&datas[4]);
-        z = USB_BytesToFloatLE(&datas[8]);
-        
-        x = RemoteArm_Clamp(x, ARM_REMOTE_X_MIN_MM, ARM_REMOTE_X_MAX_MM);
-        y = RemoteArm_Clamp(y, ARM_REMOTE_Y_MIN_MM, ARM_REMOTE_Y_MAX_MM);
-        z = RemoteArm_Clamp(z, ARM_REMOTE_Z_MIN_MM, ARM_REMOTE_Z_MAX_MM);
-
-        
-        /* ���ý������? */
-        if(USB_Task_flag == 1U)
-        {
-            Arm_task_USB(x, y, z);
-        }
-
-        break;
-
-    default:
-        /* δ֪������� */
-        break;
-    }
-}
 
 
 /*========================= ����״̬�� =========================*/
 
-/* ���ֽ�ι�������? */
+/* ���ֽ�ι�������? */
 void Receive(uint8_t bytedata)
 {
     uint16_t calc_crc;
@@ -278,7 +221,7 @@ void Receive(uint8_t bytedata)
     case 2: /* ���ճ��� */
         s_usbRxLen = bytedata;
 
-        /* ��ֹЭ�黺�����? */
+        /* ��ֹЭ�黺�����? */
         if (((uint16_t)s_usbRxLen + USB_FRAME_OVERHEAD) > USB_FRAME_BUF_SIZE)
         {
             USB_ParserReset();
@@ -341,7 +284,7 @@ void Receive(uint8_t bytedata)
         }
         else if (bytedata == USB_FRAME_HEAD1)
         {
-            /* CRC ʧ�ܣ�����ǰ�ֽ������� A5������µ�֡�?1���� */
+            /* CRC ʧ�ܣ�����ǰ�ֽ������� A5������µ�֡�?1���� */
             USB_ParserRestartFromHead1();
         }
         else
@@ -358,7 +301,7 @@ void Receive(uint8_t bytedata)
         }
         else if (bytedata == USB_FRAME_HEAD1)
         {
-            /* ֡β����������ֽڿ�������һ֡���? */
+            /* ֡β����������ֽڿ�������һ֡���? */
             USB_ParserRestartFromHead1();
         }
         else
@@ -374,19 +317,5 @@ void Receive(uint8_t bytedata)
 }
 
 
-static float RemoteArm_Clamp(float x, float min_val, float max_val)
-{
-    if (x < min_val)
-    {
-        return min_val;
-    }
-
-    if (x > max_val)
-    {
-        return max_val;
-    }
-
-    return x;
-}
 
 

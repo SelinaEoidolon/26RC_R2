@@ -78,6 +78,7 @@ add_library(Group_Components_Algorithm OBJECT
   "${SOLUTION_ROOT}/../Components/Algorithm/Src/arm_ik_3r_safe_stm32h7.c"
   "${SOLUTION_ROOT}/../Components/Algorithm/Src/arm_user.c"
   "${SOLUTION_ROOT}/../Components/Algorithm/Src/arm_echo_uart10.c"
+  "${SOLUTION_ROOT}/../Components/Algorithm/Src/Data_Analysis.c"
 )
 target_include_directories(Group_Components_Algorithm PUBLIC
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_INCLUDE_DIRECTORIES>

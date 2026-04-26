@@ -482,6 +482,11 @@
               <FileType>1</FileType>
               <FilePath>..\Components\Algorithm\Src\arm_echo_uart10.c</FilePath>
             </File>
+            <File>
+              <FileName>Data_Analysis.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Components\Algorithm\Src\Data_Analysis.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

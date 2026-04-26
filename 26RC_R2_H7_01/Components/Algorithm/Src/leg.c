@@ -4,8 +4,14 @@
 #define PI 3.1415926
 
 //�ȵ���Ƕ� rad
+
 leg lf_leg = {0,0};
 leg rf_leg = {0,0};
+
+float  lf_last_theta1 = LEGINIT_OFFSET;
+float  lf_last_theta2 = LEGINIT_OFFSET;
+float  rf_last_theta1 = LEGINIT_OFFSET;
+float  rf_last_theta2 = LEGINIT_OFFSET;
 
 float lb_leg = 0;
 float rb_leg = 0;
@@ -13,6 +19,7 @@ float rb_leg = 0;
 //ǰ�ȴ�С�Ȳ���
 float L1 = 94.5f;
 float L2 = 112.5f;
+
 
 //���Ȳ���
 

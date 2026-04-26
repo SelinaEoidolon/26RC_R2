@@ -10,6 +10,7 @@
 #include "mecanum_classic.h"
 #include "CRC.h"
 #include "bsp_uart.h"
+#include "Data_Analysis.h"
 
 
 #endif

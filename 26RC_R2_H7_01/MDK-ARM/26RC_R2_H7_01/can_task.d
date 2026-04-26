@@ -79,4 +79,6 @@
   ..\BSP\Inc\bsp_usb.h ..\USB_DEVICE\App\usb_device.h \
   ..\Components\Algorithm\Inc\arm_ik_3r_safe_stm32h7.h \
   ..\Components\Algorithm\Inc\arm_user.h \
-  ..\Components\Algorithm\Inc\arm_echo_uart10.h
+  ..\Components\Algorithm\Inc\arm_echo_uart10.h \
+  ..\Components\Algorithm\Inc\Data_Analysis.h \
+  ..\Applications\Task\Inc\INS_Task.h
