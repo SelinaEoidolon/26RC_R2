@@ -1,9 +1,14 @@
+#include "Control_Task.h"
 #include "cmsis_os.h"
 #include "pid_user.h"
 #include "CAN_Task.h"
 
 extern float ctrl_j1,ctrl_j2,ctrl_j3;
 extern float model_theta1,model_theta2,model_theta3;
+extern float ctrl_J_USB[4];
+extern float model_J_USB[4];
+extern float ctrl_J_USART[4];
+extern float model_J_USART[4];
 
 extern WheelSpeed_t total_speed ;
 //腿电机角度 rad
@@ -45,8 +50,8 @@ void CAN_Task(void const * argument){
 			}
 
 			FDCAN3_CMD_1(0,
-		    	         pid_call_3(ctrl_j2 / Tnum, 2), 
-		    	         pid_call_3( ctrl_j3 / Tnum ,3), 
+		    	         pid_call_3(ctrl_J_USART[1] / Tnum, 2), 
+		    	         pid_call_3( ctrl_J_USART[2] / Tnum ,3), 
 		    	         0
 			);
 			// FDCAN3_CMD_1(0,
@@ -77,8 +82,8 @@ void CAN_Task(void const * argument){
 		        );
 		    }
 		    FDCAN3_CMD_1(0,
-		             pid_call_3(ctrl_j2 / Tnum, 2), 
-		             pid_call_3( ctrl_j3 / Tnum ,3), 
+		             pid_call_3(ctrl_J_USB[1] / Tnum, 2), 
+		             pid_call_3( ctrl_J_USB[2] / Tnum ,3), 
 		             0
 		    );
 

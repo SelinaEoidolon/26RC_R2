@@ -3,7 +3,7 @@
 <title>Static Call Graph - [26RC_R2_H7_01\26RC_R2_H7_01.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image 26RC_R2_H7_01\26RC_R2_H7_01.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6210000: Last Updated: Sun Apr 26 10:22:32 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6210000: Last Updated: Sun Apr 26 12:17:43 2026
 <BR><P>
 <H3>Maximum Stack Usage =        540 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -993,7 +993,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h723xx.o(RESET)
 </UL>
-<P><STRONG><a name="[b5]"></a>CAN_Task</STRONG> (Thumb, 840 bytes, Stack size 0 bytes, can_task.o(.text.CAN_Task))
+<P><STRONG><a name="[b5]"></a>CAN_Task</STRONG> (Thumb, 824 bytes, Stack size 0 bytes, can_task.o(.text.CAN_Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = CAN_Task &rArr; pos_ctrl &rArr; fdcanx_send_data &rArr; HAL_FDCAN_AddMessageToTxFifoQ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FDCAN2_CMD_1
@@ -1046,7 +1046,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.text.MX_FREERTOS_Init)
 </UL>
-<P><STRONG><a name="[fd]"></a>Data_Analysis</STRONG> (Thumb, 1296 bytes, Stack size 24 bytes, data_analysis.o(.text.Data_Analysis))
+<P><STRONG><a name="[fd]"></a>Data_Analysis</STRONG> (Thumb, 1268 bytes, Stack size 24 bytes, data_analysis.o(.text.Data_Analysis))
 <BR><BR>[Stack]<UL><LI>Max Depth = 500 + Unknown Stack Size
 <LI>Call Chain = Data_Analysis &rArr; Arm_task_USB &rArr; ArmIK_ComponentStep &rArr; Send_Cmd_Data &rArr; CDC_App_Write &rArr; USBD_CDC_TransmitPacket &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer
 </UL>
@@ -2563,10 +2563,10 @@ Global Symbols
 <P><STRONG><a name="[1dd]"></a>USBD_GetString</STRONG> (Thumb, 252 bytes, Stack size 8 bytes, usbd_ctlreq.o(.text.USBD_GetString))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USBD_GetString
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_HS_InterfaceStrDescriptor
-<LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_HS_ConfigStrDescriptor
-<LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_HS_ProductStrDescriptor
+<BR>[Called By]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_HS_ProductStrDescriptor
 <LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_HS_ManufacturerStrDescriptor
+<LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_HS_InterfaceStrDescriptor
+<LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_HS_ConfigStrDescriptor
 </UL>
 
 <P><STRONG><a name="[5]"></a>USBD_HS_ConfigStrDescriptor</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, usbd_desc.o(.text.USBD_HS_ConfigStrDescriptor))

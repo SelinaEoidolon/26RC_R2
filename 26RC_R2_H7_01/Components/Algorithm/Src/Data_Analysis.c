@@ -358,9 +358,9 @@ static void USB_ARM_SET_TARGET(const uint8_t *datas, uint8_t len)
         }
         else 
         {
-            ctrl_j1 = 0.0f;
-	        ctrl_j2 = 0.0f;
-	        ctrl_j3 = 0.0f;
+            ctrl_J_USB[0] = 0.0f;
+	        ctrl_J_USB[1] = 0.0f;
+	        ctrl_J_USB[2] = 0.0f;
         }
         if(state_arm_flag_num != Arm_control_flag)
         {
@@ -372,9 +372,9 @@ static void USB_ARM_SET_TARGET(const uint8_t *datas, uint8_t len)
 }
 static void USB_ARM_STOP(const uint8_t *datas, uint8_t len)
 {
-    ctrl_j1 = 0.0f;
-	ctrl_j2 = 0.0f;
-	ctrl_j3 = 0.0f;
+    ctrl_J_USB[0] = 0.0f;
+	ctrl_J_USB[1] = 0.0f;
+	ctrl_J_USB[2] = 0.0f;
 }
 static void USB_ARM_GET_STATUS(const uint8_t *datas, uint8_t len)
 {

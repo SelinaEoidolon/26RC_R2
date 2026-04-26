@@ -1,22 +1,6 @@
 26rc_r2_h7_01/can_task.o: ..\Applications\Task\Src\CAN_Task.c \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h \
-  E:\ProgramingDownload\Keil5Download\core\ARM\ARMCLANG\include\stddef.h \
-  E:\ProgramingDownload\Keil5Download\core\ARM\ARMCLANG\include\stdint.h \
-  ..\Core\Inc\FreeRTOSConfig.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F\portmacro.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\timers.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h \
-  ..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h \
-  ..\Components\Controller\Inc\pid_user.h \
-  ..\Components\Controller\Inc\pid.h \
+  ..\Applications\Task\Inc\Control_Task.h ..\BSP\Inc\bsp_mcu.h \
+  ..\BSP\Inc\include.h ..\Core\Inc\main.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal.h \
   ..\Core\Inc\stm32h7xx_hal_conf.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h \
@@ -24,6 +8,7 @@
   ..\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h7xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h723xx.h \
   ..\Drivers\CMSIS\Include\core_cm7.h \
+  E:\ProgramingDownload\Keil5Download\core\ARM\ARMCLANG\include\stdint.h \
   F:\spareE\Vinci_Robocon_2026\26_RC_Projects\26RC_R2_H7_01\Drivers\CMSIS\Include\cmsis_version.h \
   F:\spareE\Vinci_Robocon_2026\26_RC_Projects\26RC_R2_H7_01\Drivers\CMSIS\Include\cmsis_compiler.h \
   F:\spareE\Vinci_Robocon_2026\26_RC_Projects\26RC_R2_H7_01\Drivers\CMSIS\Include\cmsis_armclang.h \
@@ -32,6 +17,7 @@
   F:\spareE\Vinci_Robocon_2026\26_RC_Projects\26RC_R2_H7_01\Drivers\CMSIS\Include\mpu_armv7.h \
   ..\Drivers\CMSIS\Device\ST\STM32H7xx\Include\system_stm32h7xx.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
+  E:\ProgramingDownload\Keil5Download\core\ARM\ARMCLANG\include\stddef.h \
   E:\ProgramingDownload\Keil5Download\core\ARM\ARMCLANG\include\math.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_gpio.h \
@@ -56,11 +42,10 @@
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_pcd.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_usb.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_pcd_ex.h \
-  ..\BSP\Inc\include.h ..\Core\Inc\main.h ..\Core\Inc\gpio.h \
-  ..\BSP\Inc\struct_typedef.h ..\Components\Device\Inc\fdcan_receive.h \
-  ..\BSP\Inc\bsp_fdcan.h ..\Core\Inc\fdcan.h ..\BSP\Inc\bsp_tick.h \
-  ..\Applications\Task\Inc\CAN_Task.h \
-  ..\Applications\Task\Inc\Control_Task.h ..\BSP\Inc\bsp_mcu.h \
+  ..\Core\Inc\gpio.h ..\BSP\Inc\struct_typedef.h \
+  ..\Components\Device\Inc\fdcan_receive.h ..\BSP\Inc\bsp_fdcan.h \
+  ..\Core\Inc\fdcan.h ..\Components\Controller\Inc\pid.h \
+  ..\Components\Controller\Inc\pid_user.h ..\BSP\Inc\bsp_tick.h \
   ..\Components\Device\Inc\dm_motor_ctrl.h \
   ..\Components\Device\Inc\dm_motor_drv.h \
   ..\Components\Algorithm\Inc\leg.h \
@@ -80,5 +65,20 @@
   ..\Components\Algorithm\Inc\arm_ik_3r_safe_stm32h7.h \
   ..\Components\Algorithm\Inc\arm_user.h \
   ..\Components\Algorithm\Inc\arm_echo_uart10.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h \
+  ..\Core\Inc\FreeRTOSConfig.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\deprecated_definitions.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F\portmacro.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\task.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\list.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\timers.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h \
+  ..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h \
+  ..\Applications\Task\Inc\CAN_Task.h \
   ..\Components\Algorithm\Inc\Data_Analysis.h \
   ..\Applications\Task\Inc\INS_Task.h

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [F:\spareE\Vinci_Robocon_2026\26_RC_Projects\26RC_R2_H7_01\MDK-ARM\out\26RC_R2_H7_01\26RC_R2_H7_01\26RC_R2_H7_01.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image F:\spareE\Vinci_Robocon_2026\26_RC_Projects\26RC_R2_H7_01\MDK-ARM\out\26RC_R2_H7_01\26RC_R2_H7_01\26RC_R2_H7_01.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Sun Apr 26 10:22:23 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Sun Apr 26 12:17:24 2026
 <BR><P>
 <H3>Maximum Stack Usage =        532 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -973,7 +973,7 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control_Task
 </UL>
 
-<P><STRONG><a name="[e8]"></a>Arm_task_USB</STRONG> (Thumb, 228 bytes, Stack size 8 bytes, Control_Task.o(.text.Arm_task_USB))
+<P><STRONG><a name="[e8]"></a>Arm_task_USB</STRONG> (Thumb, 164 bytes, Stack size 8 bytes, Control_Task.o(.text.Arm_task_USB))
 <BR><BR>[Stack]<UL><LI>Max Depth = 468 + Unknown Stack Size
 <LI>Call Chain = Arm_task_USB &rArr; ArmIK_ComponentStep &rArr; Send_Cmd_Data &rArr; CDC_App_Write &rArr; USBD_CDC_TransmitPacket &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer
 </UL>
@@ -996,7 +996,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h723xx.o(RESET)
 </UL>
-<P><STRONG><a name="[b5]"></a>CAN_Task</STRONG> (Thumb, 820 bytes, Stack size 0 bytes, CAN_Task.o(.text.CAN_Task))
+<P><STRONG><a name="[b5]"></a>CAN_Task</STRONG> (Thumb, 804 bytes, Stack size 0 bytes, CAN_Task.o(.text.CAN_Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = CAN_Task &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FDCAN2_CMD_1
@@ -1028,7 +1028,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Send_Cmd_Data
 </UL>
 
-<P><STRONG><a name="[b4]"></a>Control_Task</STRONG> (Thumb, 960 bytes, Stack size 8 bytes, Control_Task.o(.text.Control_Task))
+<P><STRONG><a name="[b4]"></a>Control_Task</STRONG> (Thumb, 908 bytes, Stack size 8 bytes, Control_Task.o(.text.Control_Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 532 + Unknown Stack Size
 <LI>Call Chain = Control_Task &rArr; Receive &rArr; Data_Analysis &rArr; Arm_task_USB &rArr; ArmIK_ComponentStep &rArr; Send_Cmd_Data &rArr; CDC_App_Write &rArr; USBD_CDC_TransmitPacket &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer
 </UL>
@@ -1049,7 +1049,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.text.MX_FREERTOS_Init)
 </UL>
-<P><STRONG><a name="[fe]"></a>Data_Analysis</STRONG> (Thumb, 1404 bytes, Stack size 24 bytes, Data_Analysis.o(.text.Data_Analysis))
+<P><STRONG><a name="[fe]"></a>Data_Analysis</STRONG> (Thumb, 1368 bytes, Stack size 24 bytes, Data_Analysis.o(.text.Data_Analysis))
 <BR><BR>[Stack]<UL><LI>Max Depth = 492 + Unknown Stack Size
 <LI>Call Chain = Data_Analysis &rArr; Arm_task_USB &rArr; ArmIK_ComponentStep &rArr; Send_Cmd_Data &rArr; CDC_App_Write &rArr; USBD_CDC_TransmitPacket &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer
 </UL>
@@ -2456,8 +2456,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_PrepareReceive
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Init_HS
-<LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Receive_HS
+<BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Receive_HS
+<LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Init_HS
 </UL>
 
 <P><STRONG><a name="[1c1]"></a>USBD_CDC_RegisterInterface</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, usbd_cdc.o(.text.USBD_CDC_RegisterInterface))
@@ -2465,13 +2465,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f3]"></a>USBD_CDC_SetRxBuffer</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, usbd_cdc.o(.text.USBD_CDC_SetRxBuffer))
-<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Init_HS
-<LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Receive_HS
+<BR><BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Receive_HS
+<LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Init_HS
 </UL>
 
 <P><STRONG><a name="[f1]"></a>USBD_CDC_SetTxBuffer</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, usbd_cdc.o(.text.USBD_CDC_SetTxBuffer))
-<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Init_HS
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_App_Write
+<BR><BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_App_Write
+<LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Init_HS
 </UL>
 
 <P><STRONG><a name="[f2]"></a>USBD_CDC_TransmitPacket</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, usbd_cdc.o(.text.USBD_CDC_TransmitPacket))

@@ -13,6 +13,10 @@ extern uint8_t USART_Task_flag ;
 extern Arm3R_Handle_t g_arm_ik;
 float ctrl_j1,ctrl_j2,ctrl_j3;
 float model_theta1,model_theta2,model_theta3;
+float ctrl_J_USB[4];
+float model_J_USB[4];
+float ctrl_J_USART[4];
+float model_J_USART[4];
 
 float start_X = 0.0f;//启动保护
 float start_Y = 0.0f;
@@ -205,23 +209,23 @@ static void Arm_task()
         {
 		    if(arm_flag == 1)
             {
-                model_theta1 = app->active_model.theta1;
-                model_theta2 = app->active_model.theta2;
-                model_theta3 = app->active_model.theta3;
+                model_J_USART[0] = app->active_model.theta1;
+                model_J_USART[1] = app->active_model.theta2;
+                model_J_USART[2] = app->active_model.theta3;
 
-                ctrl_j1 = app->active_motor_deg.j1_deg;
-                ctrl_j2 = app->active_motor_deg.j2_deg;
-                ctrl_j3 = app->active_motor_deg.j3_deg;
+                ctrl_J_USART[0] = app->active_motor_deg.j1_deg;
+                ctrl_J_USART[1] = app->active_motor_deg.j2_deg;
+                ctrl_J_USART[2] = app->active_motor_deg.j3_deg;
 		    }
 		    else 
 		    {
-			    model_theta1 = 0.0f;
-			    model_theta2 = 0.0f;
-			    model_theta3 = 0.0f;
+			    model_J_USART[0] = 0.0f;
+			    model_J_USART[1] = 0.0f;
+			    model_J_USART[2] = 0.0f;
 
-			    ctrl_j1 = 0.0f;
-			    ctrl_j2 = 0.0f;
-			    ctrl_j3 = 0.0f;
+			    ctrl_J_USART[0] = 0.0f;
+			    ctrl_J_USART[1] = 0.0f;
+			    ctrl_J_USART[2] = 0.0f;
 		    }
 
 	        if (ArmEchoUart10_IsBusy() == 0U)
@@ -265,13 +269,13 @@ void Arm_task_USB(float x,float y,float z)
 
     if(start_X_USB == x && start_Y_USB == y && start_Z_USB == z)
     {
-		model_theta1 = 0.0f;
-		model_theta2 = 0.0f;
-		model_theta3 = 0.0f;
+		model_J_USB[0] = 0.0f;
+		model_J_USB[1] = 0.0f;
+		model_J_USB[2] = 0.0f;
 
-		ctrl_j1 = 0.0f;
-		ctrl_j2 = 0.0f;
-		ctrl_j3 = 0.0f;
+		ctrl_J_USB[0] = 0.0f;
+		ctrl_J_USB[1] = 0.0f;
+		ctrl_J_USB[2] = 0.0f;
     }
     else
     {
@@ -283,13 +287,13 @@ void Arm_task_USB(float x,float y,float z)
         if (app->has_last_valid != 0U)
         {
 
-            model_theta1 = app->active_model.theta1;
-            model_theta2 = app->active_model.theta2;
-            model_theta3 = app->active_model.theta3;
+            model_J_USB[0] = app->active_model.theta1;
+            model_J_USB[1] = app->active_model.theta2;
+            model_J_USB[2] = app->active_model.theta3;
 
-            ctrl_j1 = app->active_motor_deg.j1_deg;
-            ctrl_j2 = app->active_motor_deg.j2_deg;
-            ctrl_j3 = app->active_motor_deg.j3_deg;
+            ctrl_J_USB[0] = app->active_motor_deg.j1_deg;
+            ctrl_J_USB[1] = app->active_motor_deg.j2_deg;
+            ctrl_J_USB[2] = app->active_motor_deg.j3_deg;
 		    
         }
     }
